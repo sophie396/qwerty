@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int a = 78487894;
+
+int main()
+{
+    int x = 1;
+    while (true)
+    {
+        if (((a - 2020 * x) % 2021) == 0)
+        {
+            cout << x << ' ' << ((a - 2020 * x) / 2021) << endl;
+            return 0;
+        }
+        x++;
+    }
+}
+//мы перебираем только х, а у вычисляется за О(1), поэтому перебор можно считать эффективным
+
