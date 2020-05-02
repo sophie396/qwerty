@@ -3,7 +3,8 @@
 #include <random>
 #include <ctime>
 #include <cmath>
-#define int long long
+#include <cinttypes>
+#define int __int128
 using namespace std;
  
 constexpr int MOD = 1e6;
@@ -50,14 +51,13 @@ auto main() -> signed
 {
     srand(time(0));
  
-    int p = 1013, q = 1019;
+    int p = 1e3+13, q = 1e3+9; // какие-нибудь простые чилса
     int n = p * q;
     int k = (p - 1) * (q - 1);
-    int e = 3;
+    int e = 113; //выбираем число взаимнопростое с k, чтобы работало
     int d = inverse(e, k);
     cout << "d:\t\t" << d << '\n';
-    int message = rand() % MOD;
-    //int message = 273;
+    int message = rand() % p*q;
     cout << "message:\t" << message;
     int c = binPowMod(message, e, n);
     cout << "\nencoded:\t" << c;
